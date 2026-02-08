@@ -1,0 +1,4 @@
+playwright
+sqlmodel
+psycopg2-binary
+python-dotenv
