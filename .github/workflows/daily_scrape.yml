@@ -1,4 +1,4 @@
-name: Daily Game Cracks Scraper
+name: Daily Latest Repacks Scraper
 
 on:
   schedule:
@@ -9,8 +9,6 @@ on:
 jobs:
   scrape-and-save:
     runs-on: ubuntu-latest
-    
-    timeout-minutes: 15
 
     steps:
       # 1. Check out the repository code
@@ -32,10 +30,10 @@ jobs:
 
       # 4. Install Playwright Browsers
       - name: Install Playwright Browsers
-        run: playwright install chromium
+        run: playwright install --with-deps chromium
 
       # 5. Run the Scraper
       - name: Run Scraper Script
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
-        run: python scraper.py
+        run: python fitgirl_latest_repacks_scraper.py
